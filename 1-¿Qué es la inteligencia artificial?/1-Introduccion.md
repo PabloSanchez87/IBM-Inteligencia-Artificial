@@ -1,0 +1,12 @@
+# Introducción
+## ¿Qué es la inteligencia artificial?
+
+La inteligencia artificial, o IA, es la ciencia que se dedica a hacer que las máquinas sean inteligentes. Gracias a los recientes avances en informática, las máquinas están aprendiendo a resolver problemas, algo que creíamos que solo los humanos podían hacer.
+
+La inteligencia artificial es, en realidad, un conjunto de técnicas que ayudan a las máquinas y los sistemas a imitar el comportamiento humano. Sucede como con las muñecas rusas… Al nivel de la muñeca más grande, la inteligencia artificial puede definirse como el dispositivo aplicando su inteligencia. 
+
+El proceso de convertirse en un dispositivo inteligente se esconde bajo el primer caparazón, en lo que sería la capa de aprendizaje automático, que son las técnicas generales o la variedad de técnicas que se utilizan para hacer que el dispositivo sea inteligente. Y después, otro subconjunto de algoritmos o técnicas que se denominan aprendizaje profundo. La inteligencia artificial se va a utilizar de forma universal. 
+
+Voy a aportar dos ejemplos: un automóvil con inteligencia incorporada, capaz de ver la realidad y, por lo tanto, de percibir lo que está en su camino, percibir al conductor y poder anticipar y corregir el rumbo cuando algo sale mal o se produce una incidencia en medio de la carretera. Los vehículos autónomos, de cualquier tipo, no lo serán sin inteligencia artificial. En el campo de la medicina, nuevos tratamientos que surgirán del análisis de una gran cantidad de datos para detectar tipos de cáncer y otras enfermedades. En la actualidad, las máquinas son inteligentes. Y lo son gracias a la IA. Pero la inteligencia artificial sigue dependiendo de nosotros, las personas. Somos quienes la hacemos posible. 
+
+La fase siguiente es el punto en el cual la IA podrá funcionar por sí misma. En algunas empresas, como Qualcomm, si las personas hacen bien su trabajo y la inteligencia artificial se ejecuta correctamente, la implementación real es totalmente transparente para el consumidor. El resultado final son unos dispositivos específicos que son algo más que simples utilidades. En realidad son toda una experiencia. Y harán que la vida de las personas sea más fácil y emocionante. Se trata de una tecnología realmente transformadora. Esa es la auténtica dimensión de la IA. 
