@@ -50,3 +50,31 @@ En efecto, la regresión lineal *resuelve la masa de puntos en una línea “má
 En algunas situaciones, una relación no se desarrolla en línea recta. A veces, *un sistema utiliza valores que requieren un tipo de resultado especíﬁco y limitado, como algo entre 0 y 1 (o NO y SÍ)*. En esta situación, un gráfico puede formar lo que se denomina una **función sigmoidea**, o una curva en forma de S, como se muestra en este ejemplo. Para cualquier conjunto de variables, el resultado (que es un punto de la curva S) está comprendido entre 0 y 1.
 
 ![imagen](/resources/regresionlog.png)
+
+He aquí un ejemplo real. Consulte el gráfico anterior. Supongamos que quiere saber cuántas horas tiene que estudiar para aprobar un examen. Tiene el número de horas de estudio y el resultado de aprobado o suspenso de otros 10 estudiantes. “Horas de estudio” es una cantidad variable, en este caso comprendida entre 1 y 5 horas. Aprobar el examen es una cuestión NO o SÍ (REPROBADO o APROBADO).
+
+Si se trazan estos dos factores juntos como una regresión logística, se obtiene una curva en S en la que 0 horas de estudio dan como resultado una probabilidad muy baja de aprobar, mientras que 5,5 horas dan como resultado una probabilidad muy alta. Como se muestra en el gráfico, la variable “Horas de estudio” está en el eje x. Los valores del eje y representan los valores de la variable “Probabilidad de aprobar un examen”.
+
+    He aquí otra forma de interpretar el gráfico: predice que estudiar al menos 4 horas le ofrece muchas posibilidades de aprobar el examen.
+
+### Comparación entre la regresión lineal y logística
+Las `regresiones lineal` y `logística` resultan útiles en los siguientes casos:
+
+- Una `regresión lineal` responde a una pregunta como “Si esto aumenta en X, ¿cuánto aumentará Y?”.
+- Una `regresión logística` responde a una pregunta del tipo “Si esto aumenta en X, ¿el valor de Y se acercará más a 0 o a 1?”.
+
+## El aprendizaje automático clásico no está obsoleto
+
+El `aprendizaje automático clásico` puede verse superado, en algunas tareas, por métodos más nuevos que forman parte del ecosistema del aprendizaje profundo. Pero sigue habiendo razones para utilizar el aprendizaje automático clásico. Esto incluye:
+
+- **Trabajar con datos estructurados**
+
+    El aprendizaje automático clásico se utiliza principalmente con datos estructurados procedentes de bases de datos, como las horas estudiadas en comparación con las calificaciones obtenidas.
+
+- **Menor coste de funcionamiento**
+
+    El aprendizaje automático clásico requiere menos potencia de cálculo que los ecosistemas de aprendizaje profundo. Pueden funcionar en ordenadores menos caros con procesadores menos potentes, lo que abarata el precio para pequeñas empresas, comunidades o sistemas sanitarios que comparten el tiempo de uso en acuerdos de pago por uso.
+
+- **Más fácil de interpretar**
+
+    Las redes profundas son tan complejas que ni siquiera los investigadores de IA acaban de entender lo que ocurre en su interior. Por lo tanto, los investigadores de IA no siempre son capaces de determinar cuándo los sistemas de redes profundas están generando resultados no válidos. En comparación con estos misterios, los resultados clásicos pueden ser más fáciles de depurar y es más sencillo comprobar su exactitud y falta de sesgo.
