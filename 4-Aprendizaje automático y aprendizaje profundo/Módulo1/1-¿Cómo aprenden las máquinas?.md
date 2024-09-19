@@ -23,7 +23,7 @@ Como pronto descubrirá, la máquina nunca dará este resultado con absoluta con
 
 ## Aprendizaje no supervisado
 
->![NOTE]
+>[!NOTE]
 > Suele resultar cómodo referirse a las plantas o a su comportamiento en términos que implican facultades de razonamiento. Por supuesto, las plantas no razonan, por muy razonables que parezcan ser muchas de sus acciones, y atribuirles tales cualidades es cargarlas con atributos absolutamente ajenos al mundo de las plantas.
 
 - Fuente: [Project Gutenberg royalty-texto libre](https://www.gutenberg.org/)
@@ -39,3 +39,15 @@ Por ejemplo, un sistema puede recibir muchos artículos sobre diferentes tipos d
 Con el `aprendizaje de refuerzo`, una máquina no recibe información específica que ingerir. Aprende mediante el **sistema de ensayo y error**. Los algoritmos de la máquina son recompensados cuando realiza una acción correcta y penalizados cuando no es así.
 
 ![imagen](/resources/perro.png)
+
+Supongamos que a este sistema se le da una foto que probablemente muestra un perro y se le pregunta: “¿Es esto un perro?” *Recuerde que se le ha introducido poca o ninguna información estructurada sobre perros*. La máquina responde Sí o  NO, y se asigna a sí misma un valor de confianza que está entre 100 % correcto y 100 % incorrecto.
+
+Luego se le da nueva información que indica si esa respuesta es correcta o incorrecta. Aquí es donde tiene lugar el refuerzo. Por cada respuesta que es en gran medida incorrecta, la máquina es penalizada: sus algoritmos se ajustan y la imagen se vuelve a enviar para otro intento. Pero por cada respuesta que es en gran medida correcta, los algoritmos son recompensados.
+
+Después de varias penalizaciones y recompensas, las respuestas de la máquina se vuelven más precisas y su valor de confianza aumenta.
+
+**Esto resulta particularmente útil cuando una máquina tiene que trabajar sobre un tipo específico de problema.** La máquina toma decisiones continuamente hasta que alcanza un objetivo a largo plazo. Cada decisión que toma la máquina se basa en la decisión anterior. Este es el comportamiento habitual en un área como los juegos, donde una serie de movimientos pueden ganar o perder un juego.
+
+## ¿Cómo aprenden las máquinas?
+
+Quizás se pregunte cómo aprenden las máquinas y se plantee: “¿Cómo lo hacen?” Para averiguarlo, este curso le guía a través de dos tecnologías diferentes mediante las cuales se lleva a cabo el aprendizaje automático: `el aprendizaje automático clásico` y los miembros de un grupo de tecnologías llamado `ecosistema del aprendizaje profundo`.
