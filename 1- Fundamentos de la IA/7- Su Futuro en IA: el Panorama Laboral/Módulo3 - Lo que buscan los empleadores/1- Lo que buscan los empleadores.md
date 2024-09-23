@@ -25,6 +25,7 @@ Según la información laboral de los líderes del sector, estas son las princip
     - Gestión del tiempo
     - Inteligencia empresarial
     - Pensamiento crítico
+
 - `Competencias técnicas avanzadas`
     - Lenguajes de programación (Python, R, Java, C++)
     - Infraestructuras y bibliotecas (TensorFlow, SciPy, Numpy)
