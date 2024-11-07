@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Hektor",
+        "message": "Este es el primer mensaje! Yupi!",
+        "date": "2023-04-19 13:28:38"
+    },
+    {
+        "name": "Pepe",
+        "message": "Muy buenas!",
+        "date": "2023-04-19 13:28:48"
+    },
+    {
+        "name": "Juan",
+        "message": "Buenos d\u00edas, ya estamos por aqu\u00ed!",
+        "date": "2023-04-19 13:30:30"
+    },
+    {
+        "name": "Pablo S\u00e1nchez Torres",
+        "message": "Prueba de mensaje",
+        "date": "2024-11-07 09:23:37"
+    }
+]
