@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot con voz</title>
+    <style>
+        /* Estilos generales para el cuerpo del documento */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        /* Contenedor principal */
+        #container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        /* Caja de chat */
+        #chat {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 300px;
+            width: 400px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        /* Campo de entrada de texto */
+        #input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        /* Botones de enviar y hablar */
+        #send, #voice {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        /* Estilo hover para los botones */
+        #send:hover, #voice:hover {
+            background-color: #0056b3;
+        }
+        /* Control de audio */
+        #audio {
+            margin-top: 10px;
+            width: 100%;
+        }
+        /* Indicador de grabación */
+        #recording-indicator {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- Contenedor del chat y controles -->
+        <div id="chat"></div>
+        <input type="text" id="input" placeholder="Escribe tu mensaje">
+        <button id="send">Enviar</button>
+        <button id="voice">Hablar</button>
+        <p id="recording-indicator">Grabando...</p>
+        <audio id="audio" style="display: none;"></audio>
+    </div>
+
+    <script>
+        // Referencias a los elementos del DOM
+        const chat = document.getElementById('chat');
+        const input = document.getElementById('input');
+        const send = document.getElementById('send');
+        const voice = document.getElementById('voice');
+        const audio = document.getElementById('audio');
+        const recordingIndicator = document.getElementById('recording-indicator');
+
+        // Evento click para el botón de enviar
+        send.addEventListener('click', () => {
+            const message = input.value;
+            if (message.trim() === '') return; // No enviar mensajes vacíos
+            input.value = '';
+            chat.innerHTML += `<p><strong>Tú:</strong> ${message}</p>`;
+            chat.scrollTop = chat.scrollHeight; // Desplazar hacia abajo
+            fetch('/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                chat.innerHTML += `<p><strong>Bot:</strong> ${data.response}</p>`;
+                chat.scrollTop = chat.scrollHeight; // Desplazar hacia abajo
+                fetch('/speak', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: data.response })
+                })
+                .then(response => response.blob())
+                .then(blob => {
+                    const url = URL.createObjectURL(blob);
+                    audio.src = url;
+                    audio.play(); // Reproducir el audio
+                });
+            });
+        });
+
+        // Evento click para el botón de hablar
+        voice.addEventListener('click', () => {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = 'es-ES'; // Idioma de reconocimiento
+            recognition.start();
+            recordingIndicator.style.display = 'block'; // Mostrar indicador de grabación
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                input.value = transcript;
+                send.click(); // Simular el click en el botón de enviar
+            };
+            recognition.onend = () => {
+                recordingIndicator.style.display = 'none'; // Ocultar indicador de grabación
+            };
+        });
+    </script>
+</body>
+</html>
